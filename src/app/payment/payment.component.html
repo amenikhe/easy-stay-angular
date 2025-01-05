@@ -1,1 +1,8 @@
-<p>payment works!</p>
+<div>
+    <h2>Paiement sécurisé</h2>
+    <form (submit)="handlePayment($event)">
+      <div id="card-element"><!-- Stripe Card Element apparaîtra ici --></div>
+      <button type="submit">Payer</button>
+    </form>
+  </div>
+  

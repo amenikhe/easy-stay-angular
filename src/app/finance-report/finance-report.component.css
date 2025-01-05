@@ -15,7 +15,7 @@
 }
 
 .header h2 {
-  color: #ccdb2c;
+  color: #ae9548;
   font-size: 2rem;
   margin: 10px 0;
 }
@@ -47,7 +47,7 @@ table th, table td {
 }
 
 table th {
-  background-color: #ccdb2c;
+  background-color: #ae9548;
   color: white;
   font-weight: bold;
 }
@@ -61,7 +61,7 @@ table tbody tr:hover {
 }
 
 .positive {
-  color: #ccdb2c;
+  color: #ae9548;
   font-weight: bold;
 }
 

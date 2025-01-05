@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./finance-report.component.css']
 })
 export class FinanceReportComponent implements OnInit {
+  staticContent = {
+    suggestions: [
+      'Réduire les dépenses inutiles',
+      'Investir dans des campagnes de publicité',
+      'Augmenter les tarifs pendant la haute saison',
+      'Proposer des offres spéciales pour attirer plus de clients'
+    ]
+  };
   reports = [
     { month: 'Janvier', revenue: 5000, expenses: 2000, profit: 3000 },
     { month: 'Février', revenue: 6000, expenses: 2500, profit: 3500 },
@@ -21,14 +29,7 @@ export class FinanceReportComponent implements OnInit {
     { month: 'Novembre', revenue: 15000, expenses: 7500, profit: 8000 },
     { month: 'Décembre', revenue: 16000, expenses: 8000, profit: 8500 },
   ];
-  staticContent = {
-    suggestions: [
-      'Réduire les dépenses inutiles',
-      'Investir dans des campagnes de publicité',
-      'Augmenter les tarifs pendant la haute saison',
-      'Proposer des offres spéciales pour attirer plus de clients'
-    ]
-  };
+ 
   constructor() { }
 
   ngOnInit(): void { }

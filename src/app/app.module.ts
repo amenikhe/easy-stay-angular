@@ -11,6 +11,8 @@ import { OfferComponent } from './offer/offer.component';
 import { HeaderComponent } from './header/header.component';
 import { PaymentComponent } from './payment/payment.component';
 import { FinanceReportComponent } from './finance-report/finance-report.component';
+import { GestionReservationComponent } from './gestion-reservation/gestion-reservation.component';
+import { GestionHotelComponent } from './gestion-hotel/gestion-hotel.component';
 
 
 
@@ -24,6 +26,8 @@ import { FinanceReportComponent } from './finance-report/finance-report.componen
     HeaderComponent,
     PaymentComponent,
     FinanceReportComponent,
+    GestionReservationComponent,
+    GestionHotelComponent,
   ],
   imports: [
     BrowserModule,
