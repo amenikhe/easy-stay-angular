@@ -1,0 +1,64 @@
+.footer-section {
+  background-color: #333;
+  color: white;
+  padding: 30px 0;
+}
+
+
+.single-footer-widget {
+  margin-bottom: 30px;
+}
+
+.single-footer-widget h5 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.single-footer-widget p {
+  font-size: 14px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.single-footer-widget a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.single-footer-widget a:hover {
+  text-decoration: underline;
+}
+
+iframe {
+  border-radius: 8px;
+}
+
+
+
+/* Assurez-vous que la couleur de vos liens dans Home et About est définie */
+a {
+  color: #fcfbfa;  /* Exemple de couleur de votre thème, vous pouvez la remplacer */
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  color: #ae9548;  /* Change la couleur du lien au survol, vous pouvez personnaliser cette couleur */
+}
+
+a:active {
+  color: #f8f7f5;  /* La couleur au clic, vous pouvez l'ajuster également */
+}
+
+/* Styles des liens dans le footer pour Facebook et Instagram */
+.footer-section a {
+  color: #f7f6f3;  /* Applique la couleur du thème à Facebook et Instagram */
+}
+
+.footer-section a:hover, .footer-section a:focus {
+  color: #ae9548;  /* Applique la couleur au survol */
+}
+
+.footer-section a:active {
+  color: #ae9548;  /* Applique la couleur au clic */
+}

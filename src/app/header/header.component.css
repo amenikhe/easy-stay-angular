@@ -1,0 +1,89 @@
+/* Header Section */
+.header-section {
+  display: flex;
+  align-items: center; /* Alignement vertical */
+  justify-content: space-between; /* Espace entre le logo et le menu */
+  background: #353535;
+  padding: 20px 0;
+}
+
+.header-section .logo {
+  flex-shrink: 0; /* Empêche le logo de rétrécir */
+}
+
+.header-section .logo img {
+  width: 75px; /* Largeur du logo */
+  height: auto; /* Maintenir les proportions */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Effet de transition */
+  margin-top: -10px;
+}
+
+.header-section .logo img:hover {
+  transform: scale(1.1); /* Agrandit légèrement le logo */
+  opacity: 0.8; /* Ajoute une légère transparence */
+}
+
+/* Main Menu */
+.header-section .main-menu {
+  display: flex;
+  align-items: center; /* Aligne les liens au centre verticalement */
+  flex-grow: 1; /* Le menu occupe l'espace restant */
+  margin-top: -35px;
+}
+
+.header-section .main-menu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.header-section .main-menu ul li {
+  margin: 0 15px; /* Espacement entre les liens */
+}
+
+.header-section .main-menu ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.header-section .main-menu ul li:hover a {
+  color: #ae9548; /* Changement de couleur au survol */
+}
+
+/* Spécifique pour le lien Login */
+.header-section .main-menu ul li.login {
+  margin-left: auto; /* Pousse le lien "Login" complètement à droite */
+}
+
+/* Responsiveness */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .header-section {
+    flex-wrap: wrap; /* Permet au logo et au menu de passer en ligne suivante */
+  }
+
+  .header-section .main-menu {
+    justify-content: center; /* Centre le menu sur les écrans moyens */
+  }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+  .header-section {
+    flex-direction: column; /* Passe le logo et le menu en colonne */
+    align-items: center;
+  }
+
+  .header-section .main-menu ul {
+    flex-direction: column; /* Les liens passent en colonne */
+    align-items: center;
+  }
+
+  .header-section .main-menu ul li {
+    margin: 10px 0; /* Espacement vertical entre les liens */
+  }
+}

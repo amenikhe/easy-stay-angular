@@ -1,0 +1,109 @@
+
+<div class="hotel-cards-wrapper">
+  <h2>Our offer</h2>
+  <p>Plan a last-minute getaway for a dream weekend in your favorite accommodation at Members' Prices.
+    Don't miss out on these amazing deals, available only from <strong>January 01 to January 12</strong>.</p>
+
+  <div class="filters">
+    <input type="text" id="locationFilter" [(ngModel)]="filterLocation" placeholder="Search by location">
+  </div>
+
+  <div class="hotel-cards-container">
+    <div class="arrow left" (click)="scrollLeft()">&lt;</div>
+    <div class="hotel-cards">
+      <div *ngFor="let hotel of getFilteredHotels()" class="hotel-card">
+        <img [src]="hotel.img" [alt]="hotel.name">
+        <h4>{{ hotel.name }}</h4>
+        <p><strong>Location:</strong> {{ hotel.location }}</p>
+        <p><strong>Price:</strong> {{ hotel.price }} DT per night</p>
+        <p><strong>Description:</strong> {{ hotel.description }}</p>
+        <p><strong>Services:</strong> {{ hotel.services.join(', ') }}</p>
+
+        <p><strong>Rating:</strong></p>
+        <!-- Affichage des étoiles pour chaque hôtel -->
+        <div class="rating">
+          <span *ngFor="let star of getStars(hotel.rating)" class="star" [ngClass]="star">
+            {{ star === 'filled' ? '★' : (star === 'empty' ? '☆' : '★') }}
+          </span>
+        </div>
+
+
+        <!-- Bouton de réservation -->
+        <button class="reservation-btn" (click)="showReservationForm(hotel)">Reserve Now</button>
+      </div>
+    </div>
+    <div class="arrow right" (click)="scrollRight()">&gt;</div>
+  </div>
+</div>
+
+<!-- Formulaire de réservation (affiché si une réservation est en cours) -->
+<div class="reservation-form-container" [ngClass]="{'show': isReservationFormVisible}">
+  <div class="reservation-form">
+    <button class="close-btn" (click)="closeReservationForm()">X</button>
+    <h2>Hotel Reservation</h2>
+
+    <form [formGroup]="reservationForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+
+          <input type="text" id="name" formControlName="name" placeholder="Enter your name">
+          <div *ngIf="name?.invalid && (name?.touched || name?.dirty)" class="error-message">
+            <small *ngIf="name?.errors?.['required']">Name is required.</small>
+            <small *ngIf="name?.errors?.['pattern']">Name cannot contain numbers.</small>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+          <input type="email" id="email" formControlName="email" placeholder="Enter your email">
+          <div *ngIf="email?.invalid && (email?.touched || email?.dirty)" class="error-message">
+            <small *ngIf="email?.errors?.['required']">Email is required.</small>
+            <small *ngIf="email?.errors?.['email']">Invalid email format.</small>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+          <input type="date" id="check-in" formControlName="checkIn">
+          <div *ngIf="checkIn?.invalid && (checkIn?.touched || checkIn?.dirty)" class="error-message">
+            <small *ngIf="checkIn?.errors?.['required']">Check-in date is required.</small>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+          <input type="date" id="check-out" formControlName="checkOut">
+          <div *ngIf="checkOut?.invalid && (checkOut?.touched || checkOut?.dirty)" class="error-message">
+            <small *ngIf="checkOut?.errors?.['required']">Check-out date is required.</small>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+          <input type="number" id="guests" formControlName="guests" placeholder="Number of guests" min="1">
+          <div *ngIf="guests?.invalid && (guests?.touched || guests?.dirty)" class="error-message">
+            <small *ngIf="guests?.errors?.['required']">Number of guests is required.</small>
+            <small *ngIf="guests?.errors?.['min']">Must be at least 1 guest.</small>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+          <select id="room-type" formControlName="roomType">
+              <option value="single">Single</option>
+              <option value="double">Double</option>
+              <option value="suite">Suite</option>
+          </select>
+          <div *ngIf="roomType?.invalid && (roomType?.touched || roomType?.dirty)" class="error-message">
+            <small *ngIf="roomType?.errors?.['required']">Room type is required.</small>
+          </div>
+      </div>
+
+      <div class="form-group">
+
+          <textarea id="requests" formControlName="requests" placeholder="Enter your special requests"></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn" [disabled]="reservationForm.invalid">Reserve</button>
+    </form>
+  </div>
+</div>

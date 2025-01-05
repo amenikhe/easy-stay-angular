@@ -1,0 +1,82 @@
+/* Hero Slider */
+.hero-slider {
+  position: relative;
+}
+
+.hero-slider .slider-item .single-slider-item {
+  height: 938px;
+  padding-top: 150px;
+}
+
+.hero-slider .slider-item .single-slider-item h1 {
+  font-size: 96px;
+  color: #ffffff;
+  line-height: 96px;
+}
+
+/* Style des boutons de navigation du slider */
+.slider-nav .single-slider-nav {
+  display: inline-block;
+  margin-right: 26px;
+  margin-top: 30px;
+}
+
+.slider-nav .single-slider-nav .nav-text {
+  background: #353535;
+  padding: 8px 15px;
+  position: relative;
+  transition: all 0.3s;
+  border: 1px solid #353535;
+}
+
+.slider-nav .single-slider-nav .nav-text p {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.slider-nav .single-slider-nav .nav-text:hover {
+  background: #ffffff;
+  border-color: #ae9548;
+}
+
+.slider-nav .single-slider-nav .nav-text:hover p {
+  color: #081624;
+}
+
+/* Responsiveness */
+
+/* Tablettes */
+@media (max-width: 1024px) {
+  .hero-slider .slider-item .single-slider-item {
+    padding-top: 200px; /* Ajuste la hauteur du slider sur tablette */
+    height: 700px; /* Réduit la hauteur du slider */
+  }
+
+  .hero-slider .slider-item .single-slider-item h1 {
+    font-size: 60px; /* Réduit la taille de la police du titre */
+    line-height: 60px;
+  }
+
+  .slider-nav .single-slider-nav {
+    margin-right: 15px;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 768px) {
+  .hero-slider .slider-item .single-slider-item {
+    padding-top: 150px; /* Ajuste la hauteur du slider sur mobile */
+    height: 500px; /* Réduit la hauteur du slider */
+  }
+
+  .hero-slider .slider-item .single-slider-item h1 {
+    font-size: 40px; /* Réduit la taille de la police du titre */
+    line-height: 45px;
+  }
+
+  .slider-nav .single-slider-nav {
+    margin-right: 10px;
+  }
+}

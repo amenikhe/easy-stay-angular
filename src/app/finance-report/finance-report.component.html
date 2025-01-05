@@ -1,0 +1,41 @@
+<div class="finance-report">
+  <h2>Rapports Financiers</h2>
+  <section class="finance-description">
+    <p>
+      Bienvenue dans la section des rapports financiers. Vous trouverez ici un résumé des revenus, dépenses et bénéfices pour chaque mois.
+    </p>
+    <p>
+      Ces rapports sont essentiels pour suivre les performances financières de l'hôtel et prendre des décisions éclairées.
+    </p>
+  </section>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Mois</th>
+        <th>Revenu</th>
+        <th>Dépenses</th>
+        <th>Bénéfice</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let report of reports">
+        <td>{{ report.month }}</td>
+        <td>{{ report.revenue | currency }}</td>
+        <td>{{ report.expenses | currency }}</td>
+        <td>{{ report.profit | currency }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- Section statique : Résumé ou Analyse -->
+<section class="finance-summary">
+  <h3>Analyse et Suggestions</h3>
+  <p>
+    Pour les trois derniers mois, les bénéfices sont en augmentation constante. Cela reflète une gestion efficace des ressources et une croissance continue des revenus.
+  </p>
+  <p>
+    Recommandation : Investir dans la publicité ou améliorer les services pour augmenter encore plus la satisfaction des clients.
+  </p>
+</section>
+<!-- Affichage du composant Footer apres section hotel -->
+<app-footer></app-footer> 

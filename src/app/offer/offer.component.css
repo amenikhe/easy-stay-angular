@@ -1,0 +1,303 @@
+/* Styles généraux des cartes d'hôtels */
+.hotel-cards-wrapper {
+  padding: 40px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 36px;
+  color: #333;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0 20px;
+}
+
+.filters label {
+  font-size: 16px;
+  color: #333;
+}
+
+.filters input {
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: 200px;
+}
+
+/* Conteneur du slider des cartes d'hôtels */
+.hotel-cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Flèches de navigation du slider */
+.arrow {
+  background-color: #f1f1f1;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
+
+/* Liste des cartes d'hôtels avec slider horizontal */
+.hotel-cards {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.hotel-card {
+  width: 300px;
+  flex-shrink: 0;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.hotel-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.hotel-card h4 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.hotel-card p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Styles des étoiles */
+.rating {
+  display: flex;
+  justify-content: center;
+}
+
+.star {
+  font-size: 20px;
+  color: #ccc;  /* Couleur de l'étoile vide par défaut */
+}
+
+.star.filled {
+  color: #FFD700; /* Couleur de l'étoile pleine */
+}
+
+.star.half {
+  background: linear-gradient(to right, #FFD700 50%, #ccc 50%); /* Demi-étoile remplie */
+  -webkit-background-clip: text;  /* Préfixe pour WebKit (Safari, Chrome) */
+  background-clip: text;          /* Standard */
+  color: transparent;             /* Texte transparent pour voir le gradient */
+  font-size: 20px;
+}
+
+/* Style du bouton Réserver */
+.reservation-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ae9548;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reservation-btn:hover {
+  background-color: #ae9548;
+}
+
+/* Formulaire de réservation */
+.reservation-form-container {
+  padding: 40px;
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  visibility: hidden; /* Par défaut, il est masqué */
+  opacity: 0;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+.reservation-form-container.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.reservation-form {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px; /* Limite la largeur max pour les grands écrans */
+  box-sizing: border-box;
+}
+
+.reservation-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 100px; /* Taille du champ de texte */
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #ae9548;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #ae9548;
+}
+
+/* Style responsive pour les petits écrans */
+
+/* Tablettes (jusqu'à 1024px) */
+@media (max-width: 1024px) {
+  .hotel-cards-wrapper {
+    padding: 30px;
+  }
+
+  .hotel-cards-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hotel-cards {
+    padding: 0;
+    gap: 10px;
+  }
+
+  .hotel-card {
+    width: 280px;
+  }
+
+  .filters input {
+    width: 180px;
+  }
+
+  .reservation-form-container {
+    padding: 20px;
+  }
+
+  .reservation-form {
+    max-width: 400px;
+  }
+
+  .reservation-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Mobiles (jusqu'à 600px) */
+@media (max-width: 600px) {
+  .hotel-cards-wrapper {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .hotel-cards {
+    gap: 10px;
+  }
+
+  .hotel-card {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .reservation-form-container {
+    padding: 20px;
+  }
+
+  .reservation-form {
+    max-width: 350px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
